@@ -149,7 +149,7 @@ const isSystemTenant = (tenant) =>
 
 
 // API Base URL
-const API_BASE = 'http://localhost:4000';
+const API_BASE = 'https://noteloom-api.vercel.app/';
 
 // Session timeout in milliseconds (30 minutes of inactivity)
 const SESSION_TIMEOUT = 30 * 60 * 1000; // 30 minutes
@@ -1016,7 +1016,7 @@ const useITSessionManager = () => {
       }
 
       // 1. Call standard session info (with Token Header)
-      const res = await axios.get('http://localhost:4000/session/info', {
+      const res = await axios.get('https://noteloom-api.vercel.app/session/info', {
         headers: {
           'Authorization': `Bearer ${token}` 
         }
@@ -1051,7 +1051,7 @@ const useITSessionManager = () => {
     try {
       const token = localStorage.getItem('itSessionToken');
       if (token) {
-        await axios.post('http://localhost:4000/auth/signout', {}, {
+        await axios.post('https://noteloom-api.vercel.app/auth/signout', {}, {
            headers: { 'Authorization': `Bearer ${token}` }
         });
       }

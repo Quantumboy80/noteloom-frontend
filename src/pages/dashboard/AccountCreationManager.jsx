@@ -6,7 +6,7 @@ import { useTheme } from '../../context/ThemeContext';
 import GlassHeader from '../../components/common/GlassHeader';
 
 // Define API_BASE or import it from your config
-const API_BASE = 'http://localhost:4000';
+const API_BASE = 'https://noteloom-api.vercel.app/';
 
 const AccountCreationManager = () => {
   const { isDarkMode } = useTheme();

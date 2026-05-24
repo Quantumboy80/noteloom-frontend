@@ -17,7 +17,7 @@ import UserProfileDropdown from '../../components/common/UserProfileDropdown';
 import ThemeToggle from '../../components/common/ThemeToggle';
 import CollegeBannerLogo from '../../components/common/CollegeBannerLogo';
 
-const API_BASE = 'http://localhost:4000/api'; 
+const API_BASE = 'https://noteloom-api.vercel.app/'; 
 
 const DigitalLibrary = () => {
   const navigate = useNavigate();

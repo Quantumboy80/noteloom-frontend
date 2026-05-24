@@ -40,7 +40,7 @@ useEffect(() => {
 
                 if (!token) return;
 
-                const res = await axios.get('http://localhost:4000/session/info', { 
+                const res = await axios.get('https://noteloom-api.vercel.app/session/info', { 
                     withCredentials: true,
                     headers: { 
                         // ATTACH THE TOKEN
@@ -83,7 +83,7 @@ useEffect(() => {
     const fetchRequests = async () => {
         const query = `?status=${filter.status}&dept=${filter.dept}&search=${filter.search}`;
         try {
-            const res = await axios.get(`http://localhost:4000/api/leave/admin/requests${query}`);
+            const res = await axios.get(`https://noteloom-api.vercel.app/api/leave/admin/requests${query}`);
             setRequests(res.data);
         } catch(err) { console.error("Error fetching requests"); }
     };
@@ -92,7 +92,7 @@ useEffect(() => {
         const remarks = prompt(`Enter remarks for ${status} (Optional):`, "");
         if (remarks === null) return; 
         
-        await axios.put(`http://localhost:4000/api/leave/admin/action/${id}`, { status, remarks });
+        await axios.put(`https://noteloom-api.vercel.app/api/leave/admin/action/${id}`, { status, remarks });
         fetchRequests(); 
     };
 

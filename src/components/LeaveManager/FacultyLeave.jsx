@@ -56,7 +56,7 @@ const FacultyLeave = () => {
                 return;
             }
 
-            const res = await axios.get('http://localhost:4000/session/info', { 
+            const res = await axios.get('https://noteloom-api.vercel.app/session/info', { 
                 withCredentials: true,
                 headers: { 
                     // ATTACH THE TOKEN HERE
@@ -94,7 +94,7 @@ const FacultyLeave = () => {
 
   const fetchHistory = async () => {
     try {
-        const res = await axios.get(`http://localhost:4000/api/leave/history/${userProfile.id}`);
+        const res = await axios.get(`https://noteloom-api.vercel.app/api/leave/history/${userProfile.id}`);
         setHistory(res.data);
     } catch(err) {
         console.error("Failed to load history");
@@ -114,7 +114,7 @@ const FacultyLeave = () => {
         reason: formData.get('reason')
     };
     try {
-        const res = await axios.post('http://localhost:4000/api/leave/apply', data);
+        const res = await axios.post('https://noteloom-api.vercel.app/api/leave/apply', data);
         setLastSubmit(res.data);
     } catch(err) { alert('Error submitting leave'); }
   };

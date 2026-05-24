@@ -10,7 +10,7 @@ import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext'; 
 // import NoteloomAi from '../components/NoteloomAi';
 
-const API_BASE = 'http://localhost:4000'; 
+const API_BASE = 'https://noteloom-api.vercel.app/'; 
 
 // --- INTERNAL COMPONENT: GlassHeader ---
 // Replace existing GlassHeader const
