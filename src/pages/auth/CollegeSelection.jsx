@@ -8,7 +8,7 @@ import Footer from "../../components/common/Footer";
 import LogoWithFallback from "../../components/common/LogoWithFallback"; 
 
 // Define API_BASE (Ensure this matches your backend URL)
-const API_BASE = 'http://localhost:4000';
+const API_BASE = 'https://noteloom-api.vercel.app/';
 
 const CollegeSelection = ({ navigate }) => {
   const { isDarkMode } = useTheme();
