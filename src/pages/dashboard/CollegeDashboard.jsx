@@ -19,7 +19,7 @@ import UserProfileDropdown from '../../components/common/UserProfileDropdown';
 import SessionExpiredPage from '../../components/common/SessionExpiredPage';
 import LoadingGif from '../../utils/LoadingMan.gif';
 
-const API_BASE = 'https://noteloom-api.vercel.app/';
+const API_BASE = 'https://noteloom-api.vercel.app';
 
 const iconMap = {
   BookOpen, ClipboardList, MessageSquare, Users, Calendar, Banknote, IndianRupee, 

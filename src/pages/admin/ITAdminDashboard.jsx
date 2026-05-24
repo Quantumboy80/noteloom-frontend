@@ -9,7 +9,7 @@ import CollegeBannerLogo from '../../components/common/CollegeBannerLogo';
 import ThemeToggle from '../../components/common/ThemeToggle';
 import UserProfileDropdown from '../../components/common/UserProfileDropdown';
 
-const API_BASE = 'https://noteloom-api.vercel.app/';
+const API_BASE = 'https://noteloom-api.vercel.app';
 
 const ITAdminDashboard = () => {
   const { isDarkMode } = useTheme();

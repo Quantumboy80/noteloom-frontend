@@ -149,7 +149,7 @@ const isSystemTenant = (tenant) =>
 
 
 // API Base URL
-const API_BASE = 'https://noteloom-api.vercel.app/';
+const API_BASE = 'https://noteloom-api.vercel.app';
 
 // Session timeout in milliseconds (30 minutes of inactivity)
 const SESSION_TIMEOUT = 30 * 60 * 1000; // 30 minutes

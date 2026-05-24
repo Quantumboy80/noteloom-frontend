@@ -17,7 +17,7 @@ import UserProfileDropdown from '../../components/common/UserProfileDropdown';
 import ThemeToggle from '../../components/common/ThemeToggle';
 import CollegeBannerLogo from '../../components/common/CollegeBannerLogo';
 
-const API_BASE = 'https://noteloom-api.vercel.app/';
+const API_BASE = 'https://noteloom-api.vercel.app';
 
 const ExamManagement = () => {
   const navigate = useNavigate();

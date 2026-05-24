@@ -13,7 +13,7 @@ import UserProfileDropdown from '../../components/common/UserProfileDropdown';
 import ThemeToggle from '../../components/common/ThemeToggle';
 import CollegeBannerLogo from '../../components/common/CollegeBannerLogo';
 
-const API_BASE = 'https://noteloom-api.vercel.app/';
+const API_BASE = 'https://noteloom-api.vercel.app';
 
 const getYearFromSemester = (sem) => {
   if (sem <= 2) return "1st Year";

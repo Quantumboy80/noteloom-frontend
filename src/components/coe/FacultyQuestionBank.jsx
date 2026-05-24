@@ -17,7 +17,7 @@ import CollegeBannerLogo from '../../components/common/CollegeBannerLogo';
 import LoadingGif from '../../utils/LoadingMan.gif'; 
 import ModernPdfViewer from '../../components/ModernPDFViewer';
 
-const API_BASE = 'https://noteloom-api.vercel.app/';
+const API_BASE = 'https://noteloom-api.vercel.app';
 
 const FacultyQuestionBank = () => {
   const navigate = useNavigate();

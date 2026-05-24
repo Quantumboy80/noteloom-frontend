@@ -10,7 +10,7 @@ import { useTheme } from '../context/ThemeContext';
 import ModernPDFViewer from './ModernPDFViewer'; 
 import CustomVideoPlayer from './CustomVideoPlayer';
 
-const API_BASE = 'https://noteloom-api.vercel.app/'; 
+const API_BASE = 'https://noteloom-api.vercel.app'; 
 
 // Replace existing GlassHeader const
 const GlassHeader = ({ children, isDarker }) => (

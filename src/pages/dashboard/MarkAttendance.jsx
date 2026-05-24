@@ -17,7 +17,7 @@ import ThemeToggle from '../../components/common/ThemeToggle';
 import UserProfileDropdown from '../../components/common/UserProfileDropdown';
 import AttendanceToggle from '../../components/common/AttendanceToggle'; // Importing the new toggle
 
-const API_BASE = 'https://noteloom-api.vercel.app/'; 
+const API_BASE = 'https://noteloom-api.vercel.app'; 
 
 const MarkAttendance = () => {
   const navigate = useNavigate();
