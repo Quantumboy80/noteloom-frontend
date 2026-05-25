@@ -159,10 +159,10 @@ const DigitalLibrary = () => {
   }, []);
 
   const fetchSession = async () => {
-    try {
-        const res = await fetch('http://localhost:4000/session/info', {
-            headers: { 'Authorization': `Bearer ${sessionToken}` }
-        });
+  try {
+      const res = await fetch(`${API_BASE}/session/info`, {
+          headers: { 'Authorization': `Bearer ${sessionToken}` }
+      });
         if(res.ok) {
             const data = await res.json();
             setSessionData({ user: data.user, tenant: data.tenant });
@@ -173,7 +173,7 @@ const DigitalLibrary = () => {
 
   const fetchDepartments = async () => {
     try {
-      const res = await fetch(`${API_BASE}/departments`, {
+      const res = await fetch(`${API_BASE}/api/departments`, {
         headers: { Authorization: `Bearer ${sessionToken}` }
       });
       if(res.ok) {
@@ -198,7 +198,7 @@ const DigitalLibrary = () => {
   const fetchDigitalData = async () => {
     setIsLoading(true);
     try {
-      const res = await fetch(`${API_BASE}/library/digital`, {
+      const res = await fetch(`${API_BASE}/api/library/digital`, {
         headers: { 'Authorization': `Bearer ${sessionToken}` }
       });
       if (!res.ok) throw new Error("Failed to load digital resources");
@@ -216,7 +216,7 @@ const DigitalLibrary = () => {
 
   setIsLoading(true);
   try {
-    const res = await fetch(`${API_BASE}/library/physical`, {
+    const res = await fetch(`${API_BASE}/api/library/physical`, {
       headers: { 'Authorization': `Bearer ${sessionToken}` },
       signal: controller.signal
     });
@@ -242,7 +242,7 @@ const DigitalLibrary = () => {
       if(!studentIdInput) return triggerPopup("Enter User ID/Email", "error");
       setIsLoading(true);
       try {
-          const res = await fetch(`${API_BASE}/library/physical/user/${studentIdInput}`, {
+          const res = await fetch(`${API_BASE}/api/library/physical/user/${studentIdInput}`, {
               headers: { 'Authorization': `Bearer ${sessionToken}` }
           });
           const data = await res.json();
@@ -262,7 +262,7 @@ const DigitalLibrary = () => {
       if(!scanCopyId) return triggerPopup("Scan a Book Copy ID", "error");
       
       try {
-          const res = await fetch(`${API_BASE}/library/physical/checkout`, {
+          const res = await fetch(`${API_BASE}/api/library/physical/checkout`, {
               method: 'POST',
               headers: { 
                   'Authorization': `Bearer ${sessionToken}`,
@@ -305,7 +305,7 @@ const DigitalLibrary = () => {
       if(!returnSearchId) return triggerPopup("Enter Copy ID", "error");
       
       try {
-          const res = await fetch(`${API_BASE}/library/physical/copy/${returnSearchId}`, {
+          const res = await fetch(`${API_BASE}/api/library/physical/copy/${returnSearchId}`, {
               headers: { 'Authorization': `Bearer ${sessionToken}` }
           });
           const data = await res.json();
@@ -320,7 +320,7 @@ const DigitalLibrary = () => {
 
   const handleConfirmReturn = async () => {
       try {
-          const res = await fetch(`${API_BASE}/library/physical/return`, {
+          const res = await fetch(`${API_BASE}/api/library/physical/return`, {
               method: 'POST',
               headers: { 
                   'Authorization': `Bearer ${sessionToken}`, 
@@ -377,7 +377,7 @@ const DigitalLibrary = () => {
   const handleRestoreBook = async (bookId) => {
     try {
       // Assuming backend supports this, or use the edit route to set deleteAfter: null
-      await fetch(`${API_BASE}/library/physical/book/${bookId}/restore`, {
+      await fetch(`${API_BASE}/api/library/physical/book/${bookId}/restore`, {
         method: 'PUT', // or POST depending on your backend
         headers: { 
           Authorization: `Bearer ${sessionToken}`,
@@ -423,7 +423,7 @@ const DigitalLibrary = () => {
     if (!newUpload.url.startsWith('http')) return triggerPopup("Please enter a valid URL (http/https)", "error");
 
     try {
-        const res = await fetch(`${API_BASE}/library/digital/resource`, {
+        const res = await fetch(`${API_BASE}/api/library/digital/resource`, {
             method: 'POST',
             headers: { 
               'Authorization': `Bearer ${sessionToken}`,
@@ -498,7 +498,7 @@ const DigitalLibrary = () => {
       };
 
       try {
-          const res = await fetch(`${API_BASE}/library/physical/book`, {
+          const res = await fetch(`${API_BASE}/api/library/physical/book`, {
               method: 'POST',
               headers: { 
                 'Authorization': `Bearer ${sessionToken}`,
@@ -659,7 +659,7 @@ const DigitalLibrary = () => {
     if(!scanCopyId || !studentIdInput) return triggerPopup("Enter Copy ID and Member ID", "error");
     setProcessingCheckout(true);
     try {
-        const res = await fetch(`${API_BASE}/library/physical/checkout`, {
+        const res = await fetch(`${API_BASE}/api/library/physical/checkout`, {
             method: 'POST',
             headers: { 
                 'Authorization': `Bearer ${sessionToken}`,
@@ -2042,7 +2042,7 @@ const DigitalLibrary = () => {
         onSubmit={async (e) => {
           e.preventDefault();
 
-          await fetch(`${API_BASE}/library/physical/book/${showEditBookModal._id}`, {
+          await fetch(`${API_BASE}/api/library/physical/book/${showEditBookModal._id}`, {
             method: 'PUT',
             headers: {
               Authorization: `Bearer ${sessionToken}`,
@@ -2143,7 +2143,7 @@ const DigitalLibrary = () => {
 
               <button
                 onClick={async () => {
-                  await fetch(`${API_BASE}/library/physical/book/${bookToDelete._id}`, {
+                  await fetch(`${API_BASE}/api/library/physical/book/${bookToDelete._id}`, {
                     method: 'DELETE',
                     headers: { Authorization: `Bearer ${sessionToken}` }
                   });
@@ -2183,7 +2183,7 @@ const DigitalLibrary = () => {
               <button
                 onClick={async () => {
                   try {
-                    await fetch(`${API_BASE}/library/digital/credential/${credToDelete}`, {
+                    await fetch(`${API_BASE}/api/library/digital/credential/${credToDelete}`, {
                       method: 'DELETE',
                       headers: { Authorization: `Bearer ${sessionToken}` }
                     });
@@ -2225,7 +2225,7 @@ const DigitalLibrary = () => {
               <button
                 onClick={async () => {
                   try {
-                    await fetch(`${API_BASE}/library/physical/return`, {
+                    await fetch(`${API_BASE}/api/library/physical/return`, {
                       method: 'POST',
                       headers: {
                         Authorization: `Bearer ${sessionToken}`,
@@ -2271,7 +2271,7 @@ const DigitalLibrary = () => {
               </button>
               <button
                 onClick={async () => {
-                  await fetch(`${API_BASE}/library/physical/copy/${copyToDelete.copyId}`, {
+                  await fetch(`${API_BASE}/api/library/physical/copy/${copyToDelete.copyId}`, {
                     method: 'DELETE',
                     headers: { Authorization: `Bearer ${sessionToken}` }
                   });
@@ -2347,7 +2347,7 @@ const DigitalLibrary = () => {
                     onClick={async () => {
                       // Reuse existing POST /book route which handles stock increments
                       try {
-                        await fetch(`${API_BASE}/library/physical/book`, {
+                        await fetch(`${API_BASE}/api/library/physical/book`, {
                           method: 'POST',
                           headers: { Authorization: `Bearer ${sessionToken}`, 'Content-Type': 'application/json' },
                           body: JSON.stringify({ 
@@ -2399,7 +2399,7 @@ const DigitalLibrary = () => {
                       onClick={async () => {
                         // Loop delete for selected copies
                         for (const id of selectedCopiesToRemove) {
-                          await fetch(`${API_BASE}/library/physical/copy/${id}`, {
+                          await fetch(`${API_BASE}/api/library/physical/copy/${id}`, {
                             method: 'DELETE',
                             headers: { Authorization: `Bearer ${sessionToken}` }
                           });
