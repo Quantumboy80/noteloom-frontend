@@ -21,13 +21,13 @@ const LandingPage = ({ navigate }) => {
       name: "Ritav Banerjee",
       role: "Management Lead", 
       description: "Expert in business management, managing multiple businesses along with marketing aspects.",
-      image: "webdata/ritav.jpg"
+      image: "/webdata/ritav.jpg"
     },
     {
       name: "Shuvankar Debnath",
       role: "Technical Lead",
       description: "Managing technical aspects for the creation and deployment of the platform.",
-      image: "webdata/shuv.jpeg"
+      image: "/webdata/shuv.jpeg"
     }
   ];
 

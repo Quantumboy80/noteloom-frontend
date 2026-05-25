@@ -157,7 +157,7 @@ const SESSION_TIMEOUT = 30 * 60 * 1000; // 30 minutes
 // COLLEGE CONFIGURATION - Change these values for individual colleges
 const COLLEGE_CONFIG = {
   // Set either logoUrl OR bannerUrl (not both)
-  logoUrl: "webdata/clg-logo/IEM-Kolkata.png", // College Logo
+  logoUrl: "/webdata/clg-logo/IEM-Kolkata.png", // College Logo
   bannerUrl: "", // College Banner Image (set this to use banner instead of logo)
   collegeName: "Institute of Engineering Management Kolkata",
   // For IT Dashboard - uses separate IT footer
@@ -696,7 +696,7 @@ const LogoWithFallback = ({ collegeLogoUrl, collegeName, className, fallbackClas
   const [isLoading, setIsLoading] = useState(true);
 
   // Default Note Loom logo URL
-  const noteLoomLogoUrl = "webdata/clg-logo/Note-Loom.svg";
+  const noteLoomLogoUrl = "/webdata/clg-logo/Note-Loom.svg";
 
   const handleLogoError = () => {
     setLogoError(true);

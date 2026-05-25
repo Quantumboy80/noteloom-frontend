@@ -653,7 +653,7 @@ const LoginPage = () => {
     navigate('/college-selection');
   };
 
-  const selectedCollegeLogo = `webdata/clg-logo/${selectedCollege.replace(/\s+/g, '-')}.png`;
+  const selectedCollegeLogo = `/webdata/clg-logo/${selectedCollege.replace(/\s+/g, '-')}.png`;
 
   // --- Sub-components (Modals) ---
 
