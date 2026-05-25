@@ -453,7 +453,7 @@ const FacultyQuestionBank = () => {
                                     </button>
                                 ) : (
                                     <a 
-                                        href={`${API_BASE}${q.fileUrl}`} 
+                                        href={q.fileUrl} 
                                         download
                                         className={`p-2 rounded-lg transition-colors flex items-center justify-center ${isDarkMode ? 'text-green-400 hover:bg-green-500/20' : 'text-green-600 hover:bg-green-50'}`}
                                         title="Download Document"

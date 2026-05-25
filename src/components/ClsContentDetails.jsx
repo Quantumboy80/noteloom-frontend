@@ -252,7 +252,7 @@ useEffect(() => {
                   <div className="relative w-full aspect-video bg-black rounded-xl overflow-hidden shadow-2xl">
                     <div className="absolute inset-0">
                       <CustomVideoPlayer 
-                        videoUrl={activeFile.videoUrl || `${API_BASE}/${activeFile.fileUrl}`} 
+  videoUrl={activeFile.videoUrl || (activeFile.fileUrl.startsWith('/') ? activeFile.fileUrl : `/${activeFile.fileUrl}`)} 
                         title={contentItem.title} 
                         showTitle={false} 
                         isDarkMode={isDarkMode}
@@ -262,12 +262,12 @@ useEffect(() => {
                   </div>
                 ) : getFileType(activeFile) === 'image' ? (
                    <div className="bg-gray-900 flex-1 flex justify-center items-center p-4 min-h-[400px]">
-                      <img src={`${API_BASE}/${activeFile.fileUrl}`} alt="preview" className="max-h-[600px] max-w-full object-contain" />
+                      <img src={activeFile.fileUrl.startsWith('/') ? activeFile.fileUrl : `/${activeFile.fileUrl}`} alt="preview" className="max-h-[600px] max-w-full object-contain" />
                    </div>
                 ) : (
                    <div className="h-[85vh]">
                       <ModernPDFViewer 
-                         fileUrl={`${API_BASE}/${activeFile.fileUrl}`} 
+                         fileUrl={activeFile.fileUrl.startsWith('/') ? activeFile.fileUrl : `/${activeFile.fileUrl}`} 
                          isDarkMode={isDarkMode} 
                          fileType={getFileType(activeFile)}
                       />

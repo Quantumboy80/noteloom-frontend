@@ -1178,8 +1178,9 @@ const QuestionBankManager = ({ data, setData, setPdfViewer, isDarkMode, user, pr
     };
 
     const handleFileAction = (file) => {
-        const fileUrl = `${API_BASE}${file.fileUrl}`;
-        const isPdf = file.fileUrl.toLowerCase().endsWith('.pdf');
+    // This removes the backend API and ensures there is a starting slash
+    const fileUrl = file.fileUrl.startsWith('/') ? file.fileUrl : `/${file.fileUrl}`;
+    const isPdf = file.fileUrl.toLowerCase().endsWith('.pdf');
         if (isPdf) setPdfViewer({ isOpen: true, url: fileUrl, title: file.title || file.subjectName });
         else {
             const link = document.createElement('a');
