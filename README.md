@@ -28,4 +28,4 @@ Notes:
 - The project uses Firestore collections named: announcements, theory, subjects, labs, doubt, support, etc.
 - Security: For production, set proper Firestore security rules to enforce role-based access.
 
-Generated at: 2025-08-28T08:59:01.112752 UTC
+Generated at: 2026-05-26T08:59:01.112752 UTC
