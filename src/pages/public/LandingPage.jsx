@@ -170,6 +170,7 @@ const LandingPage = ({ navigate }) => {
                     alt={member.name}
                     className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-blue-500 shadow-lg bg-white object-cover"
                     onError={(e) => {
+                      e.target.onerror = null;
                       e.target.src = "/webdata/clg-logo/Note-Loom.svg"; // Fallback image
                     }}
                   />

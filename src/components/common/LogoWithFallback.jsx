@@ -7,7 +7,7 @@ const LogoWithFallback = ({ collegeLogoUrl, collegeName, className, fallbackClas
 
   // Default Note Loom logo URL
   // Ensure this path matches where your static assets are served from
-  const noteLoomLogoUrl = "webdata/clg-logo/Note-Loom.svg";
+  const noteLoomLogoUrl = "/webdata/clg-logo/Note-Loom.svg";
 
   const handleLogoError = () => {
     setLogoError(true);
