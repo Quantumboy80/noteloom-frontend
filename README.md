@@ -4,6 +4,8 @@
 
 This is a Beta build it's prone to bugs and dosen't represents the final built.
 
+Copyright &copy; 2026 Note Loom. All Rights Reserved.
+
 ---
 
 ## 📑 Table of Contents
