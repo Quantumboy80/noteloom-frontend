@@ -574,7 +574,7 @@ Response streamed back to React → Markdown rendered → Mermaid diagram render
 
 ## 👤 Author
 
-**Sayan Som**
+**Shuvankar**
 Project: Note Loom - Beta
 Version: `V1.0.43`
 
