@@ -1,36 +1,31 @@
+# 🎓 Note Loom — College Management Platform
 
-Note Loom — Fullstack (Frontend + Firebase)
-===========================================
+**Note Loom** is a full-stack, multi-tenant college management platform that covers academics, examinations, attendance, library management, AI-powered study tools, and a complete internal IT administration panel — all under a single unified system.
 
-This project is a combined frontend + Firebase scaffold using:
-- Vite + React
-- Tailwind CSS
-- Framer Motion
-- Firebase (Auth, Firestore, Storage)
-- lucide-react icons
+This is a Beta build it's prone to bugs and dosen't represents the final built.
 
-What you need to do:
-1. Create a Firebase project at https://console.firebase.google.com/
-2. Add a Web App and copy its configuration object into `src/firebase.js`
-3. Enable Authentication -> Email/Password and Google provider (if you want Google Sign-In)
-4. Create a Firestore database and enable read/write (for development you can start in test mode)
-5. (Optional) Enable Firebase Storage if you want file upload support
+---
 
-Run locally:
-  npm install
-  npm run dev
+## 📑 Table of Contents
 
-Build:
-  npm run build
-  npm run preview
+1. [Project Overview](#project-overview)
+2. [Tech Stack](#tech-stack)
+3. [Project Architecture](#project-architecture)
+4. [Directory Structure](#directory-structure)
+5. [Multi-Tenancy Design](#multi-tenancy-design)
+6. [Authentication & Session System](#authentication--session-system)
+7. [Role System](#role-system)
+8. [Backend — All Modules Explained](#backend--all-modules-explained)
+9. [AI Feature — Deep Dive](#ai-feature--deep-dive)
+10. [Frontend Overview](#frontend-overview)
+11. [Database Models](#database-models)
+12. [API Reference Summary](#api-reference-summary)
+13. [Environment Variables](#environment-variables)
+14. [Running the Project Locally](#running-the-project-locally)
+15. [How Everything Connects](#how-everything-connects)
 
-Notes:
-- The project uses Firestore collections named: announcements, theory, subjects, labs, doubt, support, etc.
-- Security: For production, set proper Firestore security rules to enforce role-based access.
+---
 
-<<<<<<< HEAD
-Generated at: 2026-05-26T08:59:01.112752 UTC
-=======
 ## 🧠 Project Overview
 
 Note Loom is designed to serve **multiple colleges simultaneously** using a multi-tenant architecture. Each college (tenant) is isolated — their students, faculty, data, and features are completely separate from other colleges on the same platform.
@@ -584,4 +579,3 @@ Version: `V1.0.43`
 ---
 
 Generated at: 2026-05-26T22:57:01.112752 UTC
->>>>>>> b6e5b09 (Sagnik update 2 readme)
